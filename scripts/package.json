@@ -1,0 +1,24 @@
+{
+  "name": "n8n-workflow-screenshot-generator",
+  "version": "1.0.0",
+  "description": "Batch screenshot generator for n8n workflows",
+  "main": "generate-all-screenshots.js",
+  "scripts": {
+    "generate": "node generate-all-screenshots.js",
+    "test": "node generate-all-screenshots.js --help"
+  },
+  "keywords": [
+    "n8n",
+    "workflow",
+    "screenshot",
+    "automation"
+  ],
+  "author": "ylohnitram",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.6.2",
+    "dotenv": "^16.3.1",
+    "glob": "^10.3.10",
+    "puppeteer": "^24.34.0"
+  }
+}
