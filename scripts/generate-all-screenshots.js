@@ -25,7 +25,7 @@ const CONFIG = {
   n8nUrl: process.env.N8N_URL || 'http://localhost:5678',
   n8nApiKey: process.env.N8N_API_KEY,
   githubToken: process.env.GITHUB_TOKEN,
-  githubRepo: 'Replikanti/flowlint-screenshots',
+  githubRepo: process.env.GITHUB_SCREENSHOTS_REPO || 'your-org/your-screenshots-repo',
   screenshotsDir: './screenshots',
   workflowsDir: process.env.WORKFLOWS_DIR || '.',
 
@@ -543,6 +543,11 @@ async function main() {
   }
   if (!CONFIG.githubToken) {
     log.error('Missing GITHUB_TOKEN environment variable');
+    process.exit(1);
+  }
+  if (!CONFIG.githubRepo || CONFIG.githubRepo === 'your-org/your-screenshots-repo') {
+    log.error('Missing or invalid GITHUB_SCREENSHOTS_REPO environment variable');
+    log.error('Please set it to your target repository in format: owner/repo');
     process.exit(1);
   }
 
