@@ -1,0 +1,11 @@
+Screenshot Storage Information
+==============================
+
+This directory contains automated screenshots of n8n workflows.
+
+Format: PNG (1920x1080)
+Quality: 90%
+Generation: Puppeteer via n8n workflow
+Frequency: On-demand
+
+Each screenshot shows the complete n8n workflow canvas with all nodes visible.
